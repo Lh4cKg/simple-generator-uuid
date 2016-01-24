@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # python imports
-import uuid as _uu
+import uuid as _id
 
 
 class GenerateUUID(object):
@@ -21,6 +21,9 @@ class GenerateUUID(object):
 		return  len(self._abc)
 	
 	def num2str(self,num):
+		"""
+	        	convert a number to a string, using the given combined data
+	        	"""
 		# abc = list(	"0123456789"
 		# 			"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 		# 			"abcdefghijklmnopqrstuvwxyz"
@@ -35,7 +38,9 @@ class GenerateUUID(object):
 		return result
 
 	def encode(self, _uuid):
-
+		"""
+		encodes a UUID into a string
+		"""
 		return self.num2str(_uuid.int)
 
 	def update_abc(self, abc):
@@ -44,22 +49,25 @@ class GenerateUUID(object):
 		self._abc = get_combined_data
 
 	@property
-	def uu(self):
+	def _uu(self):
+		"""
+		get universal unique identification
+		"""
 
 		return _uu.uuid4()
 
 	def _uuid(self):
 		"""
-		Generate and return a UUID
+		generate and return a UUID
 		"""
 
-		uuid = self.uu #_uu.uuid4() #get_unique_txnid()
+		uuid = self._uu #_uu.uuid4() #get_unique_txnid()
 
 		return self.encode(uuid)
 
 
-_instance = GenerateUUID()
-uuid = _instance._uuid
+_inst = GenerateUUID()
+uuid = _inst._uuid
 
 """
 >>> import gen_uuid
