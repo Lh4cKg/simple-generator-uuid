@@ -1,4 +1,9 @@
+#!/usr/bin/env python
+
 # -*- coding: utf-8 -*-
+
+__author__ = "Lasha Gogua"
+__version__ = "0.1.0"
 
 # python imports
 import uuid as _id
