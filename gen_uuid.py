@@ -40,8 +40,8 @@ class GenerateUUID(object):
 
 	def update_abc(self, abc):
 
-		get_alphabet = list(sorted(set(abc))) # list(abc)
-		self._abc = get_alphabet
+		get_combined_data = list(sorted(set(abc))) # list(abc)
+		self._abc = get_combined_data
 
 	@property
 	def uu(self):
