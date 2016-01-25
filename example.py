@@ -10,6 +10,9 @@ return uuid is 'p9KD3aSMEc8KAG2XCsoTA2'.
 """
 
 import genuuid as _id
+from genuuid import __author__,__version__
 
 uuid = _id.uuid()
 print("return uuid is '%s'." % uuid)
+
+print("Author is %s" % __author__, "Package Version is %s" %__version__)
