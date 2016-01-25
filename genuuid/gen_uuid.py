@@ -12,7 +12,7 @@ import uuid as _id
 class GenerateUUID(object):
 	def __init__(self, abc=None):
 		if abc is None:
-			abc = list(	"0123456789"
+			abc = list(	"1234567890"
 					"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 					"abcdefghijklmnopqrstuvwxyz"
 					"-_"
