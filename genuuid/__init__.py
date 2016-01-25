@@ -1,4 +1,6 @@
 from genuuid.gen_uuid import (
-						uuid,
-						GenerateUUID,
+					__author__,
+					__version__,
+					uuid,
+					GenerateUUID,
 				)
