@@ -66,7 +66,7 @@ class GenerateUUID(object):
 		generate and return a UUID
 		"""
 
-		uuid = self._uu #_uu.uuid4() #get_unique_txnid()
+		uuid = self._uu #_id.uuid4() #get_unique_txnid()
 
 		return self.encode(uuid)
 
@@ -89,7 +89,7 @@ def get_uuid_txnid():
 	>>> get_uuid_txnid()
 	'10719362535681888741'
 	"""
-	return str(_uu.uuid1().int >> 64)
+	return str(_id.uuid1().int >> 64)
 
 def get_unique_txnid():
 	"""
@@ -97,4 +97,4 @@ def get_unique_txnid():
 	>>>  get_unique_txnid()
 	'1009a807b4084628a2b727587103f110'
 	"""
-	return ''.join(str(_uu.uuid4()).split('-'))
+	return ''.join(str(_id.uuid4()).split('-'))
