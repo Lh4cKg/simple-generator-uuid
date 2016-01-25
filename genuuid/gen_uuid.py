@@ -27,8 +27,8 @@ class GenerateUUID(object):
 	
 	def num2str(self,num):
 		"""
-	        	convert a number to a string, using the given combined data
-	        	"""
+		convert a number to a string, using the given combined data
+		"""
 		# abc = list(	"0123456789"
 		# 			"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 		# 			"abcdefghijklmnopqrstuvwxyz"
