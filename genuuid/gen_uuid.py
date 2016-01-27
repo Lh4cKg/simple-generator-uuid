@@ -42,11 +42,17 @@ class GenerateUUID(object):
 		
 		return result
 
-	def encode_uuid(self, _uuid):
+	def encode_s_uuid(self, _uuid):
 		"""
 		encodes a UUID into a string
 		"""
 		return self.num2str(_uuid.int >> 64)
+
+	def encode_l_uuid(self, _uuid):
+		"""
+		encodes a UUID into a string
+		"""
+		return self.num2str(_uuid.int)
 
 	def update_abc(self, abc):
 
@@ -61,23 +67,39 @@ class GenerateUUID(object):
 
 		return _id.uuid4()
 
-	def _uuid(self):
+	def _s_uuid(self):
 		"""
 		generate and return a UUID
+		** uuid lenght is 11
 		"""
 
 		uuid = self._uu #_id.uuid4() #get_unique_txnid()
 
-		return self.encode_uuid(uuid)
+		return self.encode_s_uuid(uuid)
+
+	def _l_uuid(self):
+		"""
+		generate and return a UUID
+		** uuid lenght is 22
+		"""
+
+		uuid = self._uu
+
+		return self.encode_l_uuid(uuid)
 
 
 _inst = GenerateUUID()
-uuid = _inst._uuid
+suuid = _inst._s_uuid
+luuid = _inst._l_uuid
 
 """
 >>> import gen_uuid
->>> gen_uuid.uuid()
+>>> gen_uuid.luuid() # uuid lenght is 22
 'mWPiqi5z_qQO-lr8L0LLu0'
+>>> 
+>>> import gen_uuid
+>>> gen_uuid.suuid() # uuid lenght is 11
+'KL3raivgvb5'
 """
 
 # native uuid(universal unique identification) generation, callable from uuid module
