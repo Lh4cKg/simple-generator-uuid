@@ -21,7 +21,7 @@ class GenerateUUID(object):
 		self.update_abc(abc)
 
 	@property
-	def lenght_uuid(self):
+	def length_uuid(self):
 	
 		return  len(self._abc)
 	
@@ -37,7 +37,7 @@ class GenerateUUID(object):
 
 		result = ""
 		while num:
-		    num, digit = divmod(num, self.lenght_uuid) # len(self._abc)
+		    num, digit = divmod(num, self.length_uuid) # len(self._abc)
 		    result += self._abc[digit]
 		
 		return result
