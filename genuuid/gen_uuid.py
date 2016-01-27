@@ -21,7 +21,7 @@ class GenerateUUID(object):
 		self.update_abc(abc)
 
 	@property
-	def uuid_lenght(self):
+	def lenght_uuid(self):
 	
 		return  len(self._abc)
 	
@@ -37,12 +37,12 @@ class GenerateUUID(object):
 
 		result = ""
 		while num:
-		    num, digit = divmod(num, self.uuid_lenght) # len(self._abc)
+		    num, digit = divmod(num, self.lenght_uuid) # len(self._abc)
 		    result += self._abc[digit]
 		
 		return result
 
-	def encode(self, _uuid):
+	def encode_uuid(self, _uuid):
 		"""
 		encodes a UUID into a string
 		"""
@@ -68,7 +68,7 @@ class GenerateUUID(object):
 
 		uuid = self._uu #_id.uuid4() #get_unique_txnid()
 
-		return self.encode(uuid)
+		return self.encode_uuid(uuid)
 
 
 _inst = GenerateUUID()
