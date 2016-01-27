@@ -46,7 +46,7 @@ class GenerateUUID(object):
 		"""
 		encodes a UUID into a string
 		"""
-		return self.num2str(_uuid.int)
+		return self.num2str(_uuid.int >> 64)
 
 	def update_abc(self, abc):
 
