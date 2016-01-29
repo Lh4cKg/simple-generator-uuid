@@ -3,7 +3,7 @@
 import sys
 from distutils.core import setup
 from genuuid import __version__, __author__
-assert sys.version >= "2.7", "Requires Python v2.7 and 2.7.x or above."
+assert sys.version >= "2.7", "Requires Python v2.7 and v2.7.x or above versions."
 
 setup (
 	name = "genuuid",
