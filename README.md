@@ -1,2 +1,0 @@
-# simple-generator-uuid
-
