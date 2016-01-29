@@ -12,9 +12,9 @@ Installation Requirements
 
 To install ``genuuid`` :
 
-        $ git clone https://github.com/Lh4cKg/simple-generator-uuid "genuuid"
-        $ cd genuuid
-        $ sudo python setup.py install
+$ git clone https://github.com/Lh4cKg/simple-generator-uuid "genuuid"
+$ cd genuuid
+$ sudo python setup.py install
 
 Usage
 ---------
@@ -32,17 +32,17 @@ You can then generate a long and short combined UUID:
 
 Create a simple function
 
-        def long_uuid():
-                """
-                long uuid
-                """
-                return _id.luuid()
-        
-        def short_uuid():
-                """
-                short uuid
-                """
-                return _id.suuid()
+def long_uuid():
+       """
+       long uuid
+       """
+       return _id.luuid()
+
+def short_uuid():
+       """
+       short uuid
+       """
+       return _id.suuid()
 
 
 Contributing
