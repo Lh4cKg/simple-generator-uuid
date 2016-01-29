@@ -18,7 +18,7 @@ class GenerateUUID(object):
 					"abcdefghijklmnopqrstuvwxyz"
 					"-_"
 				)
-			print(len(abc))
+
 		self.update_abc(abc)
 
 	@property
