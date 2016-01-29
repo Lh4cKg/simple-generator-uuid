@@ -12,18 +12,19 @@ import uuid as _id
 class GenerateUUID(object):
 	def __init__(self, abc=None):
 		if abc is None:
-			abc = list(	"1234567890"
+			abc = list(
+					"1234567890"
 					"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 					"abcdefghijklmnopqrstuvwxyz"
 					"-_"
 				)
-			# print(len(abc))
+			print(len(abc))
 		self.update_abc(abc)
 
 	@property
 	def length_uuid(self):
 	
-		return  len(self._abc)
+		return  int(len(self._abc))
 	
 	def num2str(self,num):
 		"""
@@ -39,7 +40,7 @@ class GenerateUUID(object):
 		while num:
 		    num, digit = divmod(num, self.length_uuid) # len(self._abc)
 		    result += self._abc[digit]
-		
+		    
 		return result
 
 	def encode_s_uuid(self, _uuid):
