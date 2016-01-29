@@ -12,9 +12,9 @@ Installation Requirements
 
 To install ``genuuid``::
 
-    $git clone https://github.com/Lh4cKg/simple-generator-uuid "genuuid"
-    $cd genuuid
-    $sudo python setup.py install
+    $ git clone https://github.com/Lh4cKg/simple-generator-uuid "genuuid"
+    $ cd genuuid
+    $ sudo python setup.py install
 
 Usage
 ---------
@@ -38,15 +38,14 @@ Create a simple function::
            """
            return _id.luuid()
 
->>> long_uuid()
-'LwJiUC63Nc8778SDJHm3b'
-
     def short_uuid():
            """
            short uuid
            """
            return _id.suuid()
 
+>>> long_uuid()
+'LwJiUC63Nc8778SDJHm3b'
 >>> short_uuid()
 'koZiFTGnWJ1'
 
