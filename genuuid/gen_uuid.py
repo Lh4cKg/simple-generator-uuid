@@ -30,15 +30,10 @@ class GenerateUUID(object):
 		"""
 		convert a number to a string, using the given combined data
 		"""
-		# abc = list(	"0123456789"
-		# 			"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		# 			"abcdefghijklmnopqrstuvwxyz"
-		# 			"-_"
-		# 		)
 
 		result = ""
 		while num:
-		    num, digit = divmod(num, self.length_uuid) # len(self._abc)
+		    num, digit = divmod(num, self.length_uuid)
 		    result += self._abc[digit]
 		    
 		return result
@@ -95,11 +90,11 @@ luuid = _inst._l_uuid
 
 """
 >>> import gen_uuid
->>> gen_uuid.luuid() # uuid lenght is 22
+>>> gen_uuid.luuid() # combined uuid lenght is 22
 'mWPiqi5z_qQO-lr8L0LLu0'
 >>> 
 >>> import gen_uuid
->>> gen_uuid.suuid() # uuid lenght is 11
+>>> gen_uuid.suuid() # combined uuid lenght is 11
 'KL3raivgvb5'
 """
 
