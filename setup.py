@@ -14,7 +14,7 @@ setup (
 	url = "https://github.com/Lh4cKg/simple-generator-uuid/",
 	packages = ["genuuid"],
 	classifiers=[
-		"Development Status :: 4 - Beta",
+		"Development Status :: Beta",
 		"Environment :: Console",
 		"Environment :: Web Environment",
 		"License :: OSI Approved :: Python Software Foundation License",
