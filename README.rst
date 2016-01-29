@@ -10,7 +10,7 @@ Installation Requirements
 * Python 2.7, 3.3, 3.4, 3.5
 * To install the source, download it from https://github.com/Lh4cKg/simple-generator-uuid and do ``python setup.py install``.
 
-To install ``genuuid`` :
+To install ``genuuid``::
 
     git clone https://github.com/Lh4cKg/simple-generator-uuid "genuuid"
     cd genuuid
@@ -30,7 +30,7 @@ You can then generate a long and short combined UUID:
 >>> _id.suuid()
 'LSJQKhGKH8E'
 
-Create a simple function
+Create a simple function::
 
     def long_uuid():
            """
