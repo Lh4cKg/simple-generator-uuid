@@ -45,7 +45,7 @@ Create a simple function which returns in the long and short uuid's::
            return _id.suuid()
 
 >>> long_uuid()
-'LwJiUC63Nc8778SDJHm3b'
+'LwJiUC63Nc8778SDJHm3bi'
 >>> short_uuid()
 'koZiFTGnWJ1'
 
