@@ -30,7 +30,7 @@ You can then generate a long and short combined UUID:
 >>> _id.suuid()
 'LSJQKhGKH8E'
 
-Create a simple function::
+Create a simple function which returns in the long and short uuid's::
 
     def long_uuid():
            """
