@@ -61,7 +61,7 @@ class GenerateUUID(object):
 		get universal unique identification
 		"""
 
-		return _id.uuid4()
+		return _id.uuid1()
 
 	def _s_uuid(self):
 		"""

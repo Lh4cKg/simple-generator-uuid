@@ -26,7 +26,7 @@ To use ``genuuid``, just import it in your project like so:
 You can then generate a long and short combined UUID:
 
 >>> _id.luuid()
-'6ncYfoH6AT8LBhZQBii0Z'
+'6ncYfoH6AT8LBhZQBii0Zr'
 >>> _id.suuid()
 'LSJQKhGKH8E'
 
