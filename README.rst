@@ -49,6 +49,10 @@ Create a simple function which returns in the long and short uuid's::
 >>> short_uuid()
 'koZiFTGnWJ1'
 
+Source Code
+-----------------
+The source code can be found on github_.
+
 Contributing
 -----------------
 There are plenty of ways to contribute to this project. If you think you’ve found a bug please submit an issue.
