@@ -2,119 +2,113 @@
 
 # -*- coding: utf-8 -*-
 
-__author__ = "Lasha Gogua"
-__version__ = "0.1.0"
+"""
+Desc: Simple Generate UUID (Universal Unique Identification)
+"""
 
 # python imports
 import uuid as _id
 
+__author__ = "Lasha Gogua"
+__version__ = "0.1.0"
+
 
 class GenerateUUID(object):
-	def __init__(self, abc=None):
-		if abc is None:
-			abc = list(
-					"1234567890"
-					"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-					"abcdefghijklmnopqrstuvwxyz"
-					"-_"
-				)
+    """
+    Desc: GenerateUUID class
+    """
+    def __init__(self, abc=None):
+        if abc is None:
+            abc = list(
+                "1234567890"
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                "abcdefghijklmnopqrstuvwxyz"
+                "-_"
+            )
 
-		self.update_abc(abc)
+        self.__update_abc(abc)
 
-	@property
-	def length_uuid(self):
-	
-		return  int(len(self._abc))
-	
-	def num2str(self,num):
-		"""
-		convert a number to a string, using the given combined data
-		"""
+    @property
+    def __length_uuid(self):
+        """
+        Desc: length uuid
+        """
 
-		result = ""
-		while num:
-		    num, digit = divmod(num, self.length_uuid)
-		    result += self._abc[digit]
-		    
-		return result
+        return  int(len(self._abc))
 
-	def encode_s_uuid(self, _uuid):
-		"""
-		encodes a UUID into a string
-		"""
+    def num2str(self, num):
+        """
+        convert a number to a string, using the given combined data
+        """
 
-		return self.num2str(_uuid.int >> 64)
+        result = ""
+        while num:
+            num, digit = divmod(num, self.__length_uuid)
+            result += self._abc[digit]
 
-	def encode_l_uuid(self, _uuid):
-		"""
-		encodes a UUID into a string
-		"""
+        return result
 
-		return self.num2str(_uuid.int)
+    def encode_s_uuid(self, _uuid):
+        """
+        encodes a UUID into a string
+        """
 
-	def update_abc(self, abc):
+        return self.num2str(_uuid.int >> 64)
 
-		get_combined_data = list(sorted(set(abc))) # list(abc)
-		self._abc = get_combined_data
+    def encode_l_uuid(self, _uuid):
+        """
+        encodes a UUID into a string
+        """
 
-	@property
-	def _uu(self):
-		"""
-		get universal unique identification
-		"""
+        return self.num2str(_uuid.int)
 
-		return _id.uuid1()
+    def __update_abc(self, abc):
+        """
+        Desc: update abc
+        """
 
-	def _s_uuid(self):
-		"""
-		generate and return a UUID
-		** uuid lenght is 11
-		"""
+        get_combined_data = list(sorted(set(abc)))
+        self._abc = get_combined_data
 
-		uuid = self._uu #_id.uuid4() #get_unique_txnid()
+    @property
+    def __uuid(self):
+        """
+        get universal unique identification
+        """
 
-		return self.encode_s_uuid(uuid)
+        return _id.uuid1()
 
-	def _l_uuid(self):
-		"""
-		generate and return a UUID
-		** uuid lenght is 22
-		"""
+    def short_uuid(self):
+        """
+        generate and return a UUID
+        ** uuid lenght is 11
+        """
 
-		uuid = self._uu
+        uuid = self.__uuid #_id.uuid4() #get_unique_txnid()
 
-		return self.encode_l_uuid(uuid)
+        return self.encode_s_uuid(uuid)
+
+    def long_uuid(self):
+        """
+        generate and return a UUID
+        ** uuid lenght is 22
+        """
+
+        uuid = self.__uuid
+
+        return self.encode_l_uuid(uuid)
 
 
-_inst = GenerateUUID()
-suuid = _inst._s_uuid
-luuid = _inst._l_uuid
+instance = GenerateUUID()
+suuid = instance.short_uuid
+luuid = instance.long_uuid
 
 """
 >>> import gen_uuid
 >>> gen_uuid.luuid() # combined uuid lenght is 22
 'mWPiqi5z_qQO-lr8L0LLu0'
->>> 
+>>>
 >>> import gen_uuid
 >>> gen_uuid.suuid() # combined uuid lenght is 11
 'KL3raivgvb5'
 """
-
-# native uuid(universal unique identification) generation, callable from uuid module
-# import uuid
-
-def get_uuid_txnid():
-	"""
-	get universal unique identification
-	>>> get_uuid_txnid()
-	'10719362535681888741'
-	"""
-	return str(_id.uuid1().int >> 64)
-
-def get_unique_txnid():
-	"""
-	get universal unique identification
-	>>>  get_unique_txnid()
-	'1009a807b4084628a2b727587103f110'
-	"""
-	return ''.join(str(_id.uuid4()).split('-'))
