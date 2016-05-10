@@ -34,7 +34,7 @@ class GenerateUUID(object):
         Desc: length uuid
         """
 
-        return  int(len(self._abc))
+        return int(len(self._abc))
 
     def num2str(self, num):
         """
